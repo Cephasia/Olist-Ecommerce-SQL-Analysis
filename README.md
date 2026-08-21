@@ -7,35 +7,19 @@
 [![DBeaver](https://img.shields.io/badge/DBeaver-IDE-372923)](https://dbeaver.io/)
 [![Status](https://img.shields.io/badge/Status-Completed-success)](#)
 
-> An end-to-end SQL analysis of the Olist Brazilian e-commerce dataset, covering data validation, data quality assessment, exploratory analysis, operational performance, customer behavior, product demand, payment activity, seller performance, and business recommendations.
+> An end-to-end SQL analysis of the Olist Brazilian e-commerce dataset, covering data validation, exploratory analysis, customer and order behavior, delivery performance, product demand, payment activity, seller performance, and business recommendations.
 
 ---
 
 ## 📌 Project Overview
 
-This project analyzes the Olist Brazilian e-commerce marketplace dataset using SQL to understand how customers, orders, products, payments, reviews, delivery operations, and sellers interact across the marketplace.
+This project analyzes the **Olist Brazilian e-commerce marketplace** using SQL to examine how customers, orders, products, payments, reviews, delivery operations, and sellers interact across the marketplace.
 
-The analysis was designed as an end-to-end analytical workflow rather than a collection of isolated SQL queries.
+The analysis follows a structured workflow:
 
-### The project covers:
+**Validate → Explore → Interpret → Recommend**
 
-- Data structure and quality validation
-- Missing-value and duplicate checks
-- Data-type and logical validation
-- Referential integrity
-- Customer and geographic analysis
-- Order-status analysis
-- Customer review analysis
-- Delivery performance and delays
-- Product-category demand
-- Payment methods and payment values
-- Additional fees and payment differences
-- Seller performance and geographic concentration
-- Business findings, insights, and recommendations
-
-The analysis was performed using **DuckDB through DBeaver, with SQL** used throughout the inspection, validation, exploration, and analysis stages.
-
-### 📖 Core objectives
+### Core Objectives
 
 * Validate data quality and relational integrity
 * Explore customer, order, product, payment, review, and seller behavior
@@ -44,97 +28,120 @@ The analysis was performed using **DuckDB through DBeaver, with SQL** used throu
 
 ---
 
-## Key Findings
+## 🔎 What Was Analyzed
 
-* **96,478 orders** were recorded as delivered, making delivery the dominant order status.
-* Customer activity is highly concentrated geographically, with **São Paulo** representing the largest customer market.
-* **Credit card** is the dominant payment method in the dataset.
-* `cama_mesa_banho` records the highest order volume among product categories analyzed.
-* High order volume does not always translate to the highest monetary contribution.
-* Seller activity is concentrated among a relatively small group of high-performing sellers.
-* Significant delivery delays were identified, creating potential operational and customer-experience concerns.
-
-For the complete findings, interpretations, and recommendations:
-
-➡️ [Business Findings, Insights & Recommendations](documentation/business_findings_insights_and_recommendations.md)
+| Area          | Focus                                              |
+| ------------- | -------------------------------------------------- |
+| **Customers** | Geographic distribution and customer concentration |
+| **Orders**    | Order status and fulfillment activity              |
+| **Reviews**   | Review scores and response intervals               |
+| **Delivery**  | Delivery performance and delays                    |
+| **Products**  | Category demand and monetary contribution          |
+| **Payments**  | Payment methods, values, and payment differences   |
+| **Sellers**   | Order volume and geographic concentration          |
 
 ---
 
-## Analytical Workflow
+## 📊 Key Findings
 
-```text
-Data Validation
-      ↓
-Data Quality Assessment
-      ↓
-Exploratory Data Analysis
-      ↓
-Business Findings
-      ↓
-Recommendations
-```
+* **96,478 orders** were recorded as delivered, making delivery the dominant order status.
+* Customer activity is strongly concentrated geographically, with **São Paulo** representing the largest customer market.
+* **Credit card** is the dominant payment method by customer activity and payment value.
+* `cama_mesa_banho` recorded the highest order volume among the product categories analyzed.
+* High order volume did not always correspond to the highest monetary contribution across categories.
+* Seller activity was concentrated among a relatively small group of high-order-volume sellers.
+* Significant delivery delays were identified within delivered orders, highlighting potential operational and customer-experience concerns.
 
-### 01 — Data Validation
+➡️ **[View detailed Business Findings, Insights & Recommendations](documentation/business_findings_insights_and_recommendations.md)**
 
-Validated:
+---
+
+## 🧪 Analytical Workflow
+
+### 01 — Data Validation & Quality Assessment
+
+The dataset was examined for:
 
 * Table structures and record counts
-* Data types
-* Missing values
-* Duplicates
-* Blank values
-* Formatting consistency
+* Data types and formatting consistency
+* Missing and blank values
+* Duplicate records
 * Referential integrity
 * Logical data-quality issues
 
-➡️ [View Data Cleaning & Validation](documentation/data_cleaning_and_validation.md)
+➡️ **[View Data Cleaning & Validation](documentation/data_cleaning_and_validation.md)**
 
-### 02 — Exploratory Analysis
+### 02 — Exploratory Data Analysis
 
-Analyzed:
+SQL was used to investigate:
 
 * Customer and geographic distribution
-* Order status
-* Reviews
-* Delivery performance
-* Product categories
-* Payment methods
-* Payment values
+* Order-status patterns
+* Customer review behavior
+* Delivery performance and delays
+* Product-category demand
+* Payment behavior
+* Seller performance and concentration
+
+➡️ **[View Exploratory Data Analysis](documentation/exploration_data_analysis.md)**
+
+### 03 — Business Findings & Recommendations
+
+The analytical results were translated into business-focused findings and recommendations across:
+
+* Customer concentration
+* Delivery operations
+* Product demand
+* Payment behavior
+* Additional charges
 * Seller performance
 
-➡️ [View Exploratory Data Analysis](documentation/exploration_data_analysis.md)
+➡️ **[View Business Findings & Recommendations](documentation/business_findings_insights_and_recommendations.md)**
 
-### 📸 Exploration Process
+---
 
-The following screenshots show some of the SQL-based exploration workflow and analytical process used during the project.
+## 📸 Exploration Process
+
+Selected screenshots from the SQL exploration workflow:
 
 ![Exploration Process 1](results/screenshots/01_exploration_screenshots/exploration_process_screenshot_1.png)
 
 ![Exploration Process 2](results/screenshots/01_exploration_screenshots/exploration_process_screenshot_2.png)
 
-### 03 — Business Findings
-
-Translated analytical outputs into business implications and recommendations covering:
-
-* Customer concentration
-* Delivery performance
-* Product demand
-* Payment behavior
-* Additional fees
-* Seller concentration
-
-➡️ [View Business Findings & Recommendations](documentation/business_findings_insights_and_recommendations.md)
-
 ---
 
 ## 🛠️ Tools & Technologies
 
-| Tool                           | Purpose                                                   |
-| ------------------------------ | --------------------------------------------------------- |
-| **SQL**                        | Data validation, transformation, exploration and analysis |
-| **DuckDB**                     | Analytical database engine                                |
-| **DBeaver**                    | SQL development environment                               |
-| **Markdown & Microsoft Word**  | Analytical Documentation                                  |
+| Tool                          | Purpose                                   |
+| ----------------------------- | ----------------------------------------- |
+| **SQL**                       | Data validation, exploration and analysis |
+| **DuckDB**                    | Analytical database engine                |
+| **DBeaver**                   | SQL development environment               |
+| **Microsoft Word & Markdown** | Analytical documentation                  |
+
+---
+
+## 🗃️ Dataset
+
+The project uses the **Olist Brazilian E-Commerce public dataset**, obtained through Kaggle's Olist organization.
+
+🔗 **[Dataset Source](https://www.kaggle.com/organizations/olistbr)**
+
+The dataset contains relational tables covering customers, orders, products, sellers, payments, reviews, geolocation, and product-category translations.
+
+### Core Tables
+
+| Table                          |   Records |
+| ------------------------------ | --------: |
+| `customers`                    |    99,441 |
+| `geolocation`                  | 1,000,163 |
+| `order_items`                  |   112,650 |
+| `order_payments`               |   103,886 |
+| `order_reviews`                |    99,224 |
+| `orders`                       |    99,441 |
+| `products`                     |    32,951 |
+| `sellers`                      |     3,095 |
+| `product_category_translation` |        71 |
 
 ---
 
@@ -144,6 +151,7 @@ Translated analytical outputs into business implications and recommendations cov
 Olist-Ecommerce-SQL-Analysis/
 │
 ├── data/
+│
 ├── sql/
 │   ├── 01_data_validation/
 │   ├── 02_exploration_analysis/
@@ -158,6 +166,7 @@ Olist-Ecommerce-SQL-Analysis/
 │   └── screenshots/
 │
 ├── assets/
+│
 └── README.md
 ```
 
@@ -165,46 +174,17 @@ Olist-Ecommerce-SQL-Analysis/
 
 ## 🖥️ SQL Environment
 
+The project was developed in **DBeaver using DuckDB**, with SQL serving as the primary language throughout the validation and analytical workflow.
+
 ![DBeaver Environment](results/screenshots/03_database_system_shot/1_DBeaver.png)
 
-The project was developed in **DBeaver using DuckDB**, with SQL serving as the primary language throughout the analytical workflow.
-
 ---
 
-## 🗃️ Dataset
+## 🎯 Project Outcome
 
-The project uses the **Olist Brazilian E-Commerce public dataset**, obtained through Kaggle's Olist organization.
+This project demonstrates how SQL can be used beyond query writing to move from **data quality assessment to business analysis**.
 
-🔗 **Dataset source:**
-https://www.kaggle.com/organizations/olistbr
-
-The dataset is relational and contains multiple tables representing different parts of the marketplace.
-
-### 📚 Core tables analyzed
-
-| Table                          |   Records |
-| ------------------------------ | --------: |
-| `customers`                    |    99,441 |
-| `geolocation`                  | 1,000,163 |
-| `order_items`                  |   112,650 |
-| `order_payments`               |   103,886 |
-| `order_reviews`                |    99,224 |
-| `orders`                       |    99,441 |
-| `products`                     |    32,951 |
-| `sellers`                      |     3,095 |
-| `product_category_translation` |        71 |
-
-These record counts were validated during the data-quality stage.
-
----
-
-# 🎯 Project Outcome
-
-This project demonstrates an end-to-end SQL workflow:
-
-**Validate → Explore → Interpret → Recommend**
-
-Rather than focusing only on query writing, the analysis connects SQL outputs to operational and commercial questions around:
+The final analysis connects relational e-commerce data to questions around:
 
 * Customer behavior
 * Geographic concentration
@@ -215,7 +195,7 @@ Rather than focusing only on query writing, the analysis connects SQL outputs to
 * Seller performance
 * Pricing and additional charges
 
-The final output is a documented analytical workflow that translates relational e-commerce data into business-relevant findings and recommendations.
+The result is a documented SQL analysis that translates raw marketplace data into **business-relevant findings and recommendations**.
 
 ---
 
