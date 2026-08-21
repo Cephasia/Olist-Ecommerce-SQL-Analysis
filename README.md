@@ -9,8 +9,6 @@
 
 > An end-to-end SQL analysis of the Olist Brazilian e-commerce dataset, covering data validation, data quality assessment, exploratory analysis, operational performance, customer behavior, product demand, payment activity, seller performance, and business recommendations.
 
-![Exploration Process](results/screenshots/01_exploration_screenshots/exploration_process_screenshot_1.png)
-
 ---
 
 ## 📌 Project Overview
